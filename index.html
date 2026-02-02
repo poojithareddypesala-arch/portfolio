@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poojitha Reddy | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="profile-container">
+        <img src="imag.jpeg" alt="Profile Photo" class="profile-photo">
+        <div class="profile-text">
+            <h1>Poojitha Reddy</h1>
+            <p>BTech Student | Aspiring Software Engineer</p>
+            <a href="resume.pdf" download class="resume-btn">Download Resume</a>
+        </div>
+    </div>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p class="fade">I am a BTech student with interest in software development and internships. I enjoy learning new technologies and building simple projects.</p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills fade">
+        <li>Python</li>
+        <li>HTML & CSS</li>
+        <li>DBMS</li>
+        <li>Git & GitHub</li>
+    </ul>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="project fade">
+        <h3>Student Management System</h3>
+        <p>Developed using Java to manage student records.</p>
+    </div>
+    <div class="project fade">
+        <h3>Online Quiz Application</h3>
+        <p>Built using HTML, CSS and JavaScript.</p>
+    </div>
+</section>
+
+<section id="certificates">
+    <h2>Certificates</h2>
+    <div class="certificates fade">
+        <div class="cert-card">
+            <p>Deloitte Technology Program</p>
+            <button onclick="openCert('Deloitte.pdf')">View Certificate</button>
+        </div>
+        <div class="cert-card">
+            <p>Hack Ranker Certificates</p>
+             <button onclick="openCert('certfi5.jpeg')">View Certificate python</button>
+            <button onclick="openCert('css Certificate3.pdf')">View Certificate CSS</button>
+             <button onclick="openCert('sql_basic Certificate4.pdf')">View Certificate Sql</button>
+        </div>
+        <div class="cert-card">
+            <p>Other Course</p>
+            <button onclick="openCert('certi1.pdf')">View Certificate Virtual Internship</button>
+             <button onclick="openCert('cert2.pdf')">View Certificate Accenture</button>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email:poojithareddypesala@gmail.com</p>
+    <p>Mobil No : 7569580954</p>
+    <p>GitHub: github.com/yourusername</p>
+    <p>LinkedIn: www.linkedin.com/in/pesala-poojitha-reddy-2b69b1287</p>
+</section>
+
+<footer>
+    <p>© 2026 Poojitha Reddy</p>
+</footer>
+
+<script>
+function openCert(imgPath) {
+    window.open(imgPath, "_blank");
+}
+
+// Simple fade-in animation when scrolling
+const faders = document.querySelectorAll('.fade');
+const appearOptions = {
+  threshold: 0.2,
+  rootMargin: "0px 0px -50px 0px"
+};
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    appearOnScroll.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>
+
+</body>
+</html>
